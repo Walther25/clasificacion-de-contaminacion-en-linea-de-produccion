@@ -40,7 +40,7 @@ pip install scikit-learn pandas numpy matplotlib seaborn joblib
 1. Abrí el notebook `clasificacion_proyecto1_v2.ipynb` en [Google Colab](https://colab.research.google.com/).
 2. En la **sección 1 — Configuración**, editá tus datos:
    ```python
-   CARNE    = "C00000"           # Tu carné
+   CARNE    = "X00000"           # Tu carné
    NOMBRE   = "NombreEstudiante"
    APELLIDO = "ApellidoEstudiante"
    ```
