@@ -1,0 +1,139 @@
+================================================================
+  RESULTADOS — PROYECTO 1
+  Clasificación de Contaminaciones en Línea de Producción
+  Estudiante : Walther Barrantes (C31037)
+================================================================
+
+
+----------------------------------------------------------------
+  1. CONFIGURACIÓN
+----------------------------------------------------------------
+
+  Estudiante  : Walther Barrantes (C31037)
+  Split       : 80% entrenamiento / 20% prueba
+  Repeticiones: 20
+
+
+----------------------------------------------------------------
+  2. DATASET CARGADO
+----------------------------------------------------------------
+
+  Archivo         : dataset.csv
+  Total imágenes  : 120
+  Píxeles/imagen  : 16384 (128x128)
+  Positivos       : 60 (con arroz)
+  Negativos       : 60 (sin arroz)
+
+
+----------------------------------------------------------------
+  3. DIVISIÓN ENTRENAMIENTO / PRUEBA
+----------------------------------------------------------------
+
+  Entrenamiento : 96 imágenes  (positivos=48, negativos=48)
+  Prueba        : 24 imágenes  (positivos=12, negativos=12)
+
+  Balance en entrenamiento : 50.0% positivos
+  Balance en prueba        : 50.0% positivos
+
+
+----------------------------------------------------------------
+  4. MODELOS E HIPERPARÁMETROS A EXPLORAR
+----------------------------------------------------------------
+
+  Árbol de Decisión : 24 combinaciones
+  Naive Bayes       :  4 combinaciones
+  KNN               :  8 combinaciones
+  SVM               :  6 combinaciones
+
+
+----------------------------------------------------------------
+  5. RESULTADOS DE GRIDSEARCHCV
+----------------------------------------------------------------
+
+  Árbol de Decisión
+    Mejores hiperparámetros : {'criterion': 'gini', 'max_depth': 10, 'min_samples_split': 5}
+    Exactitud en CV (train) : 67.63%
+    Exactitud en prueba     : 62.5%
+    Tiempo de búsqueda      : 7.7s
+
+  Naive Bayes
+    Mejores hiperparámetros : {'var_smoothing': 0.001}
+    Exactitud en CV (train) : 54.11%
+    Exactitud en prueba     : 50.0%
+    Tiempo de búsqueda      : 0.6s
+
+  KNN
+    Mejores hiperparámetros : {'metric': 'euclidean', 'n_neighbors': 3}
+    Exactitud en CV (train) : 50.0%
+    Exactitud en prueba     : 50.0%
+    Tiempo de búsqueda      : 0.9s
+
+  SVM
+    Mejores hiperparámetros : {'C': 1, 'kernel': 'rbf'}
+    Exactitud en CV (train) : 96.89%
+    Exactitud en prueba     : 100.0%
+    Tiempo de búsqueda      : 9.5s
+
+
+----------------------------------------------------------------
+  6. EVALUACIÓN ROBUSTA (20 iteraciones por modelo)
+----------------------------------------------------------------
+
+  Árbol de Decisión : Acc = 0.6875 ±0.0639   F1 = 0.744
+  Naive Bayes       : Acc = 0.5188 ±0.0246   F1 = 0.068
+  KNN               : Acc = 0.5042 ±0.0125   F1 = 0.669
+  SVM               : Acc = 0.9771 ±0.0384   F1 = 0.979
+
+
+----------------------------------------------------------------
+  7. TABLA UNIFICADA DE MÉTRICAS
+----------------------------------------------------------------
+
+  Rank  Modelo             Acc Media (±Std)    Acc Min   Acc Max   F1 Media (±Std)    Acc Prueba  Precisión  Recall  F1 Prueba   TP  TN  FP  FN  Acc CV   Tiempo(s)
+  ----  -----------------  ------------------  --------  --------  -----------------  ----------  ---------  ------  ---------  ---  --  --  --  -------  ---------
+   1    SVM                0.9771 ±0.0384      0.8333    1.0000    0.9789 ±0.0337     1.0000      1.0000     1.0000  1.0000      12  12   0   0  0.9689   9.5
+   2    Árbol de Decisión  0.6875 ±0.0639      0.5833    0.7917    0.7440 ±0.0514     0.6250      0.5882     0.8333  0.6897      10   5   7   2  0.6763   7.7
+   3    Naive Bayes        0.5188 ±0.0246      0.5000    0.5833    0.0681 ±0.0879     0.5000      0.0000     0.0000  0.0000       0  12   0  12  0.5411   0.6
+   4    KNN                0.5042 ±0.0125      0.5000    0.5417    0.6686 ±0.0057     0.5000      0.5000     1.0000  0.6667      12   0  12   0  0.5000   0.9
+
+  Leyenda:
+    Acc       = Exactitud
+    Precisión = De los predichos positivos, ¿cuántos lo eran realmente?
+    Recall    = De los positivos reales, ¿cuántos se detectaron?
+    F1        = Media armónica entre Precisión y Recall
+    TP/TN     = Verdadero Positivo / Verdadero Negativo
+    FP/FN     = Falso Positivo / Falso Negativo
+    Acc CV    = Exactitud en validación cruzada (GridSearchCV, dentro del entrenamiento)
+
+
+----------------------------------------------------------------
+  8. MODELO GANADOR Y EXPORTACIÓN
+----------------------------------------------------------------
+
+  Modelo seleccionado : SVM
+  Hiperparámetros     : {'C': 1, 'kernel': 'rbf'}
+  Algoritmo           : SVC
+
+  Reentrenado con el 100% de los datos.
+
+  Verificación (primeras 3 filas):
+    Predicciones : [1, 1, 1]
+    Reales       : [1, 1, 1]
+
+  Archivo exportado : C31037_Walther_Barrantes.joblib
+
+
+================================================================
+  RESUMEN FINAL
+================================================================
+
+  Estudiante      : Walther Barrantes (C31037)
+  Dataset         : 120 imágenes x 16384 píxeles (128×128)
+  Clases          : 60 positivos, 60 negativos
+  Split           : 80/20 — Evaluación repetida 20x
+
+  MODELO EXPORTADO : SVM
+  Hiperparámetros  : {'C': 1, 'kernel': 'rbf'}
+  Archivo          : C31037_Walther_Barrantes.joblib
+
+================================================================
