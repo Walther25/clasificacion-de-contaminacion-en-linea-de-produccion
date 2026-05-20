@@ -1,4 +1,4 @@
-# Proyecto 1 — Clasificación de Contaminaciones en Línea de Producción
+# Proyecto 1 — Clasificación de “contaminaciones” en una línea de producción simulada
 
 Entrenamiento y comparación de cuatro algoritmos de clasificación clásica sobre imágenes binarizadas (128×128 px) para detectar **granos de arroz (contaminaciones)** en una línea de producción.
 
