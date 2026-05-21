@@ -130,7 +130,7 @@ pixel_1, pixel_2, ..., pixel_16384, etiqueta
 Editá tus datos al inicio de `src/script/clasificacion.py`:
 
 ```python
-CARNE    = "C00000"
+CARNE    = "X00000"
 NOMBRE   = "TuNombre"
 APELLIDO = "TuApellido"
 ```
