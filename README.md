@@ -19,10 +19,10 @@ Entrena y compara cuatro algoritmos de clasificación clásica sobre imágenes b
 │   ├── procesed/                     # Imágenes convertidas a PNG 128x128 B&N
 │   └── dataset.csv                   # Dataset combinado con encabezado pixel_1...pixel_16384, etiqueta
 ├── models/
-│   └── C31037_Walther_Barrantes.joblib   # Modelo SVM exportado
+│   └── C31037_Walther_Barrantes.joblib      # Modelo SVM exportado
 ├── reports/
 │   ├── graficos/                     # Gráficas generadas por el entrenamiento
-│   ├── informe_final.pdf             # Informe final del proyecto
+│   ├── informe_final_Walther_Barrantes.pdf  # Informe final del proyecto
 │   └── resultados/
 │       └── resultados.txt            # Salida completa del entrenamiento
 ├── src/
