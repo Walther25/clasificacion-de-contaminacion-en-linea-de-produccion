@@ -35,7 +35,7 @@ Entrena y compara cuatro algoritmos de clasificación clásica sobre imágenes b
 │       ├── imagenes_a_csv.py
 │       └── clasificacion.py
 ├── DATASET.md
-├── LICENS
+├── LICENSE
 ├── MODEL_CARD.md
 └── README.md
 ```
